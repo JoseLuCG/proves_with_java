@@ -15,6 +15,10 @@ public class Ejercicio5_pag42 {
         coefficient = sc.nextInt();
         System.out.println("Escribe la constante");
         constant=sc.nextInt();
-        System.out.println("La solucion es: "+equationSolution(coefficient,constant));
+        if (coefficient!=0) {
+            System.out.println("La solucion es: " + equationSolution(coefficient, constant));
+        } else {
+            System.out.println("No tiene solucion");
+        }
     }
 }
