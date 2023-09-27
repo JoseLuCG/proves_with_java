@@ -16,11 +16,8 @@ public class Ejercicio4_pag42 {
 
         extraHoursWorked = workHour-40;
         extraHoursTotal = extraHoursWorked * extraHour;
-        totalHours =  + extraHoursTotal;
+        totalHours = (40*12) + extraHoursTotal ;
 
-        if (workHour>40){
-
-        }
         return totalHours;
     }
     public static void main(String[] args) {
