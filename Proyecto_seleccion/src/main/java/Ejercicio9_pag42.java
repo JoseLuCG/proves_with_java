@@ -4,11 +4,10 @@ public class Ejercicio9_pag42 {
     public static double[] equSolution(double a, double b, double c){
         double x1;
         double x2;
-        double rad1 = Math.sqrt(b*b-4*a*c);
-        double rad2 = -(Math.sqrt(b*b-4*a*c));
-        double [] results = {};
-        x1 = (-b*rad1)/(2*a);
-        x2 = (-b*rad2)/(2*a);
+        double rad = Math.sqrt(b*b-4*a*c);
+        double [] results = {0,0};
+        x1 = (-b+rad)/(2*a);
+        x2 = (-b-rad)/(2*a);
         results[0] = x1;
         results[1] = x2;
         return results;
@@ -17,15 +16,24 @@ public class Ejercicio9_pag42 {
         double a;
         double b;
         double c;
+        double [] totalResult;
+        double result1;
+        double result2;
         Scanner sc= new Scanner(System.in);
 
         System.out.println("Escribe el primer coeficiente:");
         a=sc.nextDouble();
-        System.out.println("Escribe el primer coeficiente:");
+        System.out.println("Escribe el segundo coeficiente:");
         b= sc.nextDouble();
-        System.out.println("Escribe el primer coeficiente:");
+        System.out.println("Escribe la constante coeficiente:");
         c= sc.nextDouble();
 
+        totalResult = equSolution(a,b,c);
+        result1 = totalResult[0];
+        result2 = totalResult[1];
+
+        System.out.println("El resultado de x1 es: "+ result1);
+        System.out.println("El resultado de x2 es: "+ result2);
 
     }
 }
