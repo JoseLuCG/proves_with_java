@@ -11,6 +11,5 @@ public class Ejercicio11_pag51 {
         for (int i = 0; i<5; i++){
             System.out.println((number+i)+"     "+((number+i)*(number+i))+"     "+((number+i)*(number+i)*(number+i)));
         }
-
     }
 }
