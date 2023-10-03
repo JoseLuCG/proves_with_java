@@ -5,12 +5,19 @@ public class Ejercicio7_pag51 {
         Scanner sc= new Scanner(System.in);
         int inputUser;
         int password = 1234;
+        int attempts = 4;
 
 
         do {
             System.out.println("Escribe la contrasena:");
             inputUser=sc.nextInt();
-        } while (inputUser != password);
-        System.out.println("la contrasena es correcta");
+
+            if (password==inputUser) {
+                System.out.println("la contrasena es correcta");
+            }else System.out.println("la contrasena es incorrecta");
+
+            if (attempts==0) System.out.println("no te quedan intentos");
+            attempts--;
+        } while (inputUser != password && attempts!=0);
     }
 }
