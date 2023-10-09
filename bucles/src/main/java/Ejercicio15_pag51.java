@@ -10,8 +10,8 @@ public class Ejercicio15_pag51 {
         System.out.println("Escribe el exponente:");
         exponent= sc.nextInt();
 
-        for (int i=0;i<exponent; i++) {
-            System.out.println(base+"^"+(exponent-i));
+        for (int i=1;i<=exponent; i++) {
+            System.out.println(base+"^"+i);
         }
     }
 }
