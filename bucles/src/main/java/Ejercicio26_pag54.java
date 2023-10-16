@@ -19,6 +19,7 @@ public class Ejercicio26_pag54 {
             if (rest == digit){
                 System.out.println("La posicion es "+numLength);
             }
+            numLength--;
         }while (number!=0);
     }
 }
