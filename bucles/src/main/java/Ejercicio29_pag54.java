@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+/*
+    Pendiente de acabar
+ */
 public class Ejercicio29_pag54 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
