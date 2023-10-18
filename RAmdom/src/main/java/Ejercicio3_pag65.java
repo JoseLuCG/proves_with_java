@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Ejercicio2_pag65 {
+public class Ejercicio3_pag65 {
     public static void main(String[] args) {
         Random random1 = new  Random();
         Random random2 = new  Random();
@@ -8,10 +8,10 @@ public class Ejercicio2_pag65 {
         int card=random1.nextInt(1,14);
 
         switch (suit){
-            case 1: System.out.print("Picas, "); break;
-            case 2: System.out.print("Diamantes, "); break;
-            case 3: System.out.print("Corazones, "); break;
-            case 4: System.out.print("Treboles, "); break;
+            case 1: System.out.print("Oros, "); break;
+            case 2: System.out.print("Bastos, "); break;
+            case 3: System.out.print("Copas, "); break;
+            case 4: System.out.print("Espadas, "); break;
         }
         switch (card){
             case 1: System.out.print(" As"); break;
@@ -24,9 +24,9 @@ public class Ejercicio2_pag65 {
             case 8: System.out.print(" 8"); break;
             case 9: System.out.print(" 9"); break;
             case 10: System.out.print(" 10"); break;
-            case 11: System.out.print(" J"); break;
-            case 12: System.out.print(" Q"); break;
-            case 13: System.out.print(" K"); break;
+            case 11: System.out.print(" Sota"); break;
+            case 12: System.out.print(" Caballo"); break;
+            case 13: System.out.print(" Rey"); break;
         }
 
     }
