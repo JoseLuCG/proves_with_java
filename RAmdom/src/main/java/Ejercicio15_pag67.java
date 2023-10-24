@@ -3,7 +3,7 @@ import java.util.Random;
 public class Ejercicio15_pag67 {
     public static void main(String[] args) {
         Random random = new Random();
-        int group, musicalNote;
+        int group, musicalNote, firstNote =0;
 
         group = random.nextInt(1, 8);
         switch (group){
@@ -23,6 +23,12 @@ public class Ejercicio15_pag67 {
            // for the compas.
            for (int note = 0; note<4; note++){
                musicalNote = random.nextInt(1,8);
+
+               if (note == 0 && notes == 0) {
+                   firstNote = musicalNote;
+               } else if (notes == group -1 && note == 3) {
+                   musicalNote = firstNote;
+               }
                switch (musicalNote){
                    case 1: System.out.print(" do "); break;
                    case 2: System.out.print(" re "); break;
@@ -38,6 +44,5 @@ public class Ejercicio15_pag67 {
            } else System.out.print("|");
        }
         System.out.println();
-        System.out.println(group);
     }
 }
