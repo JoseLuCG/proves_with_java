@@ -1,6 +1,4 @@
-import java.util.Arrays;
-
-public class Eejrcicio1_pag84 {
+public class Ejercicio1_pag84 {
     public static void main(String[] args) {
         int[][] num = new int[3][6];
         num[0][0] = 0;
