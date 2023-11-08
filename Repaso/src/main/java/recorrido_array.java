@@ -7,7 +7,8 @@ public class recorrido_array {
         //recFilFil();
         //recFilFil1();
         //recColxCol1();
-        diagonalPrincipal();
+        //diagonalPrincipal();
+        diagonalSecundaria();
 
     }
 
@@ -69,6 +70,18 @@ public class recorrido_array {
 
         for (int p = 0; p < numeros.length ; p++) {
             numeros[p][p] = rnd.nextInt(1, 101);
+        }
+    }
+
+    /**
+     * Recorre la diagonal secundaria del array.
+     */
+    public static void diagonalSecundaria() {
+        int[][] numeros = new int[4][4];
+        int c = numeros[0].length-1;
+        for (int p = 0; p < numeros.length ; p++) {
+            numeros[p][c] = rnd.nextInt(1, 101);
+            c--;
         }
     }
 }
