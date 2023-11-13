@@ -25,5 +25,12 @@ public class Ejercicio7_pag85 {
         //Agignamos la mina:
         juego[fm][cm] = 1;
         // Vendria el juego
+        do {
+            System.out.println("Introduce las coordenadas donde crees que esta el tesoro.");
+            do {
+                f = sc.nextInt();
+                c = sc.nextInt();
+
+        }while (juego[f][c] != 1 || juego[f][c]!= 2);
     }
 }
