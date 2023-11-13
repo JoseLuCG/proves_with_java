@@ -8,8 +8,9 @@ public class recorrido_array {
         //recFilFil1();
         //recColxCol1();
         //diagonalPrincipal();
-        diagonalSecundaria();
-
+        //diagonalSecundaria();
+        //subAreaArray();
+        recorridoColindante();
     }
 
     /**
@@ -84,4 +85,41 @@ public class recorrido_array {
             c--;
         }
     }
+
+    public static void subAreaArray() {
+        int[][] numeros = new int[10][8];
+        int fila=4, col= 5, arco=3, fi, ff, ci, cf;
+        int nc= numeros[0].length;
+
+        fi = fila-arco; ff = fila+arco;
+        ci = col - arco; cf = col + arco;
+        if (fi<0) fi = 0;
+        if (ci<0) ci = 0;
+        if (ff>= numeros.length) ff = numeros.length-1;
+        if (cf>=nc) cf = nc - 1;
+
+        //Rellenamos el array:
+        for (int f=fi; f<=ff;f++){
+            for (int c=ci; c<= cf; c++){
+                numeros[f][c] = rnd.nextInt(1,10);
+            }
+        }
+    }
+
+    public static void recorridoColindante (){
+        int[][] numeros = new int[10][8];
+        int f = 0, c = 1;
+
+        if (f>0 && c>0) numeros[f-1][c-1] = rnd.nextInt(1, 10);
+        if (f>0) numeros[f-1][c] = rnd.nextInt(1, 10);
+        if (f>0 && c<numeros[0].length-1) numeros[f-1][c+1] = rnd.nextInt(1, 10);
+
+        if (c>0) numeros[f][c-1] = rnd.nextInt(1, 10);
+        if (c< numeros.length-1) numeros[f][c+1] = rnd.nextInt(1, 10);
+
+        if (f< numeros.length-1 && c>0) numeros[f+1][c-1] = rnd.nextInt(1, 10);
+        if (f< numeros.length-1) numeros[f+1][c] = rnd.nextInt(1, 10);
+        if (f< numeros.length && c<numeros[0].length-1) numeros[f+1][c+1] = rnd.nextInt(1, 10);
+    }
+
 }
