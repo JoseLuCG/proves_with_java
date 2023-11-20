@@ -34,7 +34,25 @@ public class Ejercicio7_pag85 {
                 c = sc.nextInt();
             }while (f>5 ||c>4);
             f--; c--; cont++;
+            // Ver colindantes a la mina:
+            int fr = Math.abs(fm-f);
+            int cr = Math.abs(cm-c);
+            if ( (fr==1 && cr==1) || (fr==0 && cr==1) ||(fr==1 && cr==0)) {
+                System.out.println("Tienes una mina cerca");
+            }
 
+            if (( juego[f][c] != 1 || juego[f][c] != 2 )) System.out.println("Te quedan "+(3-cont)+" intentos");
         }while ( ( juego[f][c] != 1 || juego[f][c] != 2 ) && cont<3 );
+
+        if (juego[f][c]==2) System.out.println("Enorabuena has encontrado el tesoro.");
+        if (juego[f][c]==1) System.out.println("Lo siento, te ha explotado la mina.");
+        if (cont == 3) System.out.println("Se acabaron los intentos.");
+
+        for (int i = 0; i < juego.length; i++) {
+            for (int j = 0; j < juego[0].length; j++) {
+                System.out.printf("%4d", juego[i][j]);
+            }
+            System.out.println();
+        }
     }
 }
