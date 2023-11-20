@@ -16,7 +16,7 @@ public class Ejercicio8_pag85 {
         int c = (int)col-97;
         int f = 8 - ((int)fil-49);
 
-        for
+        for ()
 
     }
 }
