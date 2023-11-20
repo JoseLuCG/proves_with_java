@@ -14,9 +14,11 @@ public class Ejercicio8_pag85 {
 
         //Parseo los datos del usuario a datos validos para la matriz.
         int c = (int)col-97;
-        int f = 8 - ((int)fil-49);
+        int f = 8 - ((int)fil-48);
 
-        for ()
+        //Recorremos las diagonales principales:
+        int pos = ;
+        for (int p= )
 
     }
 }
