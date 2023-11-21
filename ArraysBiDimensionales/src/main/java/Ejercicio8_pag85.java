@@ -13,7 +13,7 @@ public class Ejercicio8_pag85 {
         Scanner sc= new Scanner(System.in);
         int[][] tablero = new int[8][8];
         String position;
-
+        char[] letras = {'a','b','c','d','e','f','g','h'};
         // Solicitamos la posición del arfil:
         System.out.println("Introduce la posicicion del arfil:");
         position = sc.next().toLowerCase();
@@ -28,32 +28,32 @@ public class Ejercicio8_pag85 {
         // ---------- Recorremos las diagonales principales: ----------
         // ----- Diagonal principal ascendente -----
         int pc=c;
-        for (int pf=f-1; pf>=0; pf--){
+        for (int pf=f-1; pf>=0 && pc>=0; pf--){
             pc--;
-            System.out.print("("+pf+","+pc+")");
+            System.out.print("("+letras[pc]+""+(8-pf)+")");
         }
         System.out.println();
         // ----- Diagonal principal descendente -----
         int dpc=c;
-        for (int dr=f+1; dr< tablero.length-1; dr++){
+        for (int dr=f+1; dr<8 && dpc<8; dr++){
             dpc++;
-            System.out.print("("+dr+","+dpc+")");
+            System.out.print("("+letras[dpc]+""+(8-dr)+")");
         }
         System.out.println();
         // ---------- Recorremos las diagonales secundarias: ----------
         // ----- Diagonal secundaria ascendente: -----
         int dc=c;
-        for (int dr=f-1; dr>=0; dr--){
+        for (int dr=f-1; dr>=0 && dc>=0; dr--){
             // dr= fila diagonal: dc = columna diagonal;
             dc++;
-            System.out.print("("+dr+","+dc+")");
+            System.out.print("("+letras[dc]+""+(8-dr)+")");
         }
         System.out.println();
         // ----- Diagonal secundaria descendente: -----
-        int dsc=c;
-        for (int dsr=f-1; dsr>=0;dsr--){
-            dsc++;
-            System.out.print("("+dsr+","+dsc+")");
+        int dsc=c-1;
+        for (int dsr=f+1; dsr<8 && dsc>=0; dsr++){
+            System.out.print("("+letras[dsc]+","+(8-dsr)+")");
+            dsc--;
         }
 
     }
