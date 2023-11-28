@@ -92,6 +92,62 @@ public class juego_3_en_raya {
         }
         return victoryCondition;
     }
+    public static boolean recorridoDiagonalPrincipalJ1 (char[][] matriz, boolean victoryCondition){
+        int winXCounter=0;
+        for (int p=0; p< matriz.length; p++){
+            if ( matriz[p][p]=='x'){
+                winXCounter++;
+                if (winXCounter == 3) {
+                    victoryCondition= true;
+                    System.out.println("Jugaor 1, has ganado la partida.");
+                }
+            }
+        }
+        return victoryCondition;
+    }
+    public static boolean recorridoDiagonalPrincipalJ2 (char[][] matriz, boolean victoryCondition){
+        int winOCounter=0;
+        for (int p=0; p< matriz.length; p++){
+            if ( matriz[p][p]=='o'){
+                winOCounter++;
+                if (winOCounter == 3) {
+                    victoryCondition= true;
+                    System.out.println("Jugaor 2, has ganado la partida.");
+                }
+            }
+        }
+        return victoryCondition;
+    }
+    public static boolean recorridoDiagonalSecundariaJ1 (char[][] matriz, boolean victoryCondition) {
+        int dwinXCounter=0;
+        int c = matriz[0].length-1;
+        for (int p=0; p< matriz.length; p++){
+            if ( matriz[p][c]=='x'){
+                dwinXCounter++;
+                if (dwinXCounter == 3) {
+                    victoryCondition= true;
+                    System.out.println("Jugaor 1, has ganado la partida.");
+                }
+            }
+            c--;
+        }
+        return  victoryCondition;
+    }
+    public static boolean recorridoDiagonalSecundariaJ2 (char[][] matriz, boolean victoryCondition){
+        int dwinOCounter=0;
+        int c = matriz[0].length-1;
+        for (int p=0; p< matriz.length; p++){
+            if ( matriz[p][c]=='o'){
+                dwinOCounter++;
+                if (dwinOCounter == 3) {
+                    victoryCondition= true;
+                    System.out.println("Jugaor 2, has ganado la partida.");
+                }
+            }
+            c--;
+        }
+        return victoryCondition;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         char[][] board = new char[3][3];
@@ -135,52 +191,25 @@ public class juego_3_en_raya {
             }
             //---------- Condiciones de victoria. ----------
             //---------- Recorrido de filas ----------
-            recorridoLineaJ1(board, finish);
+            finish=recorridoLineaJ1(board, finish);
             //----- Recorrido linea a linea para jugador 2: -----
-            recorridooLineaJ2(board, finish);
+            finish=recorridooLineaJ2(board, finish);
             //---------- Recorrido de columnas: ----------
             //----- Recorrido en columnas para el jugador 1
-            recorridoColumnaJ1(board, finish);
+            finish=recorridoColumnaJ1(board, finish);
             //----- Recorrido en columnas para el jugador 2
-            recorridoColumnaJ2(board, finish);
+            finish=recorridoColumnaJ2(board, finish);
             //---------- Recorrido diagonal ----------
             //----- Recorrido en diagonal principal para el jugador 1
-            for (int p=0; p< board.length; p++){
-                if ( board[p][p]=='x'){
-                    winXCounter++;
-                    if (winXCounter == 3) {
-                        finish= true;
-                        System.out.println("Jugaor 1, has ganado la partida.");
-                    }
-                }
-            }
+            finish=recorridoDiagonalPrincipalJ1(board, finish);
             //----- Recorrido en diagonal principal para el jugador 2
-            for (int p=0; p< board.length; p++){
-                if ( board[p][p]=='o'){
-                    winOCounter++;
-                    if (winOCounter == 3) {
-                        finish= true;
-                        System.out.println("Jugaor 2, has ganado la partida.");
-                    }
-                }
-            }
+            finish=recorridoDiagonalPrincipalJ2(board, finish);
             //----- Recorrido en diagonal secundaria para el jugador 1
-
+            finish=recorridoDiagonalSecundariaJ1(board, finish);
             //----- Recorrido en diagonal secundaria para el jugador 2
-            int c = board[0].length-1;
-            for (int p=0; p< board.length; p++){
-                if ( board[p][c]=='o'){
-                    dwinOCounter++;
-                    if (dwinOCounter == 3) {
-                        finish= true;
-                        System.out.println("Jugaor 2, has ganado la partida.");
-                    }
-                }
-                c--;
-            }
+            finish=recorridoDiagonalSecundariaJ2(board, finish);
             //---------- Cambiamos turno. ----------
             playerCount++;
-
         }while (!finish);
     }
 }
