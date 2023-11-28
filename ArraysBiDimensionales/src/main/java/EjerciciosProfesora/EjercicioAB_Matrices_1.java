@@ -1,3 +1,5 @@
+package EjerciciosProfesora;
+
 public class EjercicioAB_Matrices_1 {
     public static final String GREEN = "\u001B[32m";
     public static final String CYAN = "\u001B[36m";

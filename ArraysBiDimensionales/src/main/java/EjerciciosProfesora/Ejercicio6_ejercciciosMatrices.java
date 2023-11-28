@@ -1,3 +1,5 @@
+package EjerciciosProfesora;
+
 import java.util.Scanner;
 
 public class Ejercicio6_ejercciciosMatrices {

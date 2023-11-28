@@ -1,3 +1,5 @@
+package EjerciciosProfesora;
+
 import java.util.Random;
 
 public class Ejercicio5_ejerciciosMatrices {
