@@ -23,7 +23,6 @@ public class juego_3_en_raya {
         }
         return victoryCondition;
     }
-
     /**
      * Funcion que recorre la matriz fila a fila para el jugador 2.
      * @param matriz array a recorrer.
@@ -46,7 +45,6 @@ public class juego_3_en_raya {
         }
         return victoryCondition;
     }
-
     /**
      * Funcion que recorre la matriz columna a columna para el jugador 1.
      * @param matriz array a recorrer.
@@ -92,6 +90,12 @@ public class juego_3_en_raya {
         }
         return victoryCondition;
     }
+    /**
+     * Función que recorre la diagonal principal para el jugador 1.
+     * @param matriz array a recorrer.
+     * @param victoryCondition condición que para el bucle.
+     * @return - Devuelve la condición que permite que el jeugo se siga ejecutando.
+     */
     public static boolean recorridoDiagonalPrincipalJ1 (char[][] matriz, boolean victoryCondition){
         int winXCounter=0;
         for (int p=0; p< matriz.length; p++){
@@ -105,6 +109,12 @@ public class juego_3_en_raya {
         }
         return victoryCondition;
     }
+    /**
+     * Funcion que recorre la diagonal principal para el jugador 2.
+     * @param matriz array a recorrer.
+     * @param victoryCondition condición que para el bucle.
+     * @return - Devuelve la condición que permite que el jeugo se siga ejecutando.
+     */
     public static boolean recorridoDiagonalPrincipalJ2 (char[][] matriz, boolean victoryCondition){
         int winOCounter=0;
         for (int p=0; p< matriz.length; p++){
@@ -118,6 +128,12 @@ public class juego_3_en_raya {
         }
         return victoryCondition;
     }
+    /**
+     * Función que recorre la diagonal secundaria para el jugador 1.
+     * @param matriz array a recorrer.
+     * @param victoryCondition condición que para el bucle.
+     * @return - Devuelve la condición que permite que el jeugo se siga ejecutando.
+     */
     public static boolean recorridoDiagonalSecundariaJ1 (char[][] matriz, boolean victoryCondition) {
         int dwinXCounter=0;
         int c = matriz[0].length-1;
@@ -133,6 +149,12 @@ public class juego_3_en_raya {
         }
         return  victoryCondition;
     }
+    /**
+     * Función que recorre la diagonal secundaria para el jugador 2.
+     * @param matriz array a recorrer.
+     * @param victoryCondition condición que para el bucle.
+     * @return - Devuelve la condición que permite que el jeugo se siga ejecutando.
+     */
     public static boolean recorridoDiagonalSecundariaJ2 (char[][] matriz, boolean victoryCondition){
         int dwinOCounter=0;
         int c = matriz[0].length-1;
@@ -160,7 +182,6 @@ public class juego_3_en_raya {
         char playerMark = 'x';
         char marcaJugador1='x';
         char marcaJugador2='o';
-
 
         do {
             // ---------- Comprobamos de quien es el turno: ----------
@@ -190,24 +211,30 @@ public class juego_3_en_raya {
                 System.out.println();
             }
             //---------- Condiciones de victoria. ----------
+
             //---------- Recorrido de filas ----------
             finish=recorridoLineaJ1(board, finish);
             //----- Recorrido linea a linea para jugador 2: -----
             finish=recorridooLineaJ2(board, finish);
+
             //---------- Recorrido de columnas: ----------
             //----- Recorrido en columnas para el jugador 1
             finish=recorridoColumnaJ1(board, finish);
             //----- Recorrido en columnas para el jugador 2
             finish=recorridoColumnaJ2(board, finish);
+
+
             //---------- Recorrido diagonal ----------
             //----- Recorrido en diagonal principal para el jugador 1
             finish=recorridoDiagonalPrincipalJ1(board, finish);
             //----- Recorrido en diagonal principal para el jugador 2
             finish=recorridoDiagonalPrincipalJ2(board, finish);
+
             //----- Recorrido en diagonal secundaria para el jugador 1
             finish=recorridoDiagonalSecundariaJ1(board, finish);
             //----- Recorrido en diagonal secundaria para el jugador 2
             finish=recorridoDiagonalSecundariaJ2(board, finish);
+
             //---------- Cambiamos turno. ----------
             playerCount++;
         }while (!finish);
