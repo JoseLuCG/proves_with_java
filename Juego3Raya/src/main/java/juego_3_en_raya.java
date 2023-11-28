@@ -38,9 +38,10 @@ public class juego_3_en_raya {
             for (int f=0; f< board.length; f++){
                 for (int c=0; c< board[0].length; c++){
                     if (board[f][c]==0){
-                        System.out.printf("%2s","_");
-                    }else System.out.printf("%2s",board[f][c]);
+                        System.out.printf("%4s","_");
+                    }else System.out.printf("%4s",board[f][c]);
                 }
+                System.out.println();
                 System.out.println();
             }
             //---------- Condiciones de victoria. ----------
