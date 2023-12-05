@@ -57,4 +57,21 @@ public class Funciones {
             System.out.println();
         }
     }
+    public static int[][] resultSalesOfCheckotsFotMonths (int[][][] matrix) {
+        // Data: data[SHOP][SALES FOR MONTH]
+        int[][] data = new int[10][5];
+        int sumSalesForBox;
+
+        for (int s = 0; s < matrix.length; s++) {
+            for (int c = 0; c < matrix[0].length; c++) {
+                sumSalesForBox = 0;
+                for (int m = 0; m < matrix[0][0].length; m++) {
+                    sumSalesForBox= sumSalesForBox + matrix[s][c][m];
+                }
+                data[s][c] = sumSalesForBox;
+            }
+        }
+
+        return data;
+    }
 }
